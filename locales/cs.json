@@ -1,0 +1,16 @@
+{
+  "global": {
+    "header": {
+      "navLinks": [
+        {
+          "href": "https://nuxtjs.org/",
+          "title": "Documentation"
+        },
+        {
+          "href": "https://github.com/nuxt/nuxt.js",
+          "title": "GitHub"
+        }
+      ]
+    }
+  }
+}

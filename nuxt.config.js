@@ -1,9 +1,10 @@
+import i18n from './config/i18n'
+
 export default {
-  // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     title: 'starter-pack-nuxt',
     htmlAttrs: {
-      lang: 'en'
+      lang: 'cs-CZ'
     },
     meta: [
       { charset: 'utf-8' },
@@ -15,38 +16,66 @@ export default {
     ]
   },
 
-  // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
-    '~/assets/css/main.scss'
+    '@assets/scss/main.scss'
   ],
 
-  // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
+  styleResources: {
+    scss: '@/assets/scss/_vars.scss'
+  },
+
+  bootstrapVue: {
+    icons: true
+  },
+
   plugins: [
+    '~plugins/GlobalComponents'
   ],
 
-  // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
 
-  // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
-    // https://go.nuxtjs.dev/eslint
     '@nuxtjs/eslint-module',
-    // https://go.nuxtjs.dev/stylelint
     '@nuxtjs/stylelint-module'
   ],
 
-  // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
-    // https://go.nuxtjs.dev/bootstrap
     'bootstrap-vue/nuxt',
-    // https://go.nuxtjs.dev/axios
-    '@nuxtjs/axios'
+    '@nuxtjs/axios',
+    '@nuxtjs/style-resources',
+    'nuxt-i18n'
   ],
 
-  // Axios module configuration: https://go.nuxtjs.dev/config-axios
+  i18n: {
+    strategy: 'prefix',
+    seo: true,
+    defaultLocale: 'cs',
+    fallbackLocale: ['cs', 'en'],
+    detectBrowserLanguage: {
+      useCookie: true,
+      cookieKey: 'i18n_redirected',
+      onlyOnRoot: true
+    },
+    locales: [
+      {
+        code: 'cs',
+        iso: 'cs-CZ',
+        name: 'Česky',
+        file: 'cs.json'
+      },
+      {
+        code: 'en',
+        iso: 'en-UK',
+        name: 'English',
+        file: 'en.json'
+      }
+    ],
+    lazy: true,
+    langDir: 'locales/',
+    vueI18n: i18n
+  },
+
   axios: {},
 
-  // Build Configuration: https://go.nuxtjs.dev/config-build
-  build: {
-  }
+  build: {}
 }
