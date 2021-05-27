@@ -1,5 +1,7 @@
 # starter-pack-nuxt
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/fd4efacc-5dce-4a15-94b1-fb8949129c9d/deploy-status)](https://app.netlify.com/sites/starter-pack-nuxt/deploys)
+
 ### Build and run serve
 
 ```bash
